@@ -22,12 +22,21 @@ there are 3 type of dependencies injection
 @Component
 class YourBusinessClass{
     //Field Injection
-    @Autowired
+
     Dependency1 dependency1;
-    @Autowired
     Dependency2 dependency2;
 
+    @Autowired
+    public void setDependency1(Dependency1 dependency1) {
+        System.out.println("setDependency1");
+        this.dependency1 = dependency1;
+    }
 
+    @Autowired
+    public void setDependency2(Dependency2 dependency2) {
+        System.out.println("setDependency2");
+        this.dependency2 = dependency2;
+    }
 
     @Override
     public String toString() {
